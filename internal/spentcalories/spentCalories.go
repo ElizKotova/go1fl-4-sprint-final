@@ -95,6 +95,6 @@ const ( // Константы для расчета калорий, расход
 func WalkingSpentCalories(steps int, weight, height float64, duration time.Duration) float64 {
 	speed := meanSpeed(steps, duration) //Рассчитать среднюю скорость с помощью meanSpeed().
 	durationInHours := duration.Hours() //Продолжительность duration нужно перевести в часы.
-	calories := ((walkingCaloriesWeightMultiplier * weight) + ((speed * speed / height) * walkingSpeedHeightMultiplier)) * durationInHours
+	calories := (walkingCaloriesWeightMultiplier*weight + (speed*speed/height)*walkingSpeedHeightMultiplier) * durationInHours
 	return calories //Рассчитать и вернуть количество калорий.
 }

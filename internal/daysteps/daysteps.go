@@ -51,7 +51,7 @@ func DayActionInfo(data string, weight, height float64) string {
 		return ""
 	}
 	distanceInMeters := float64(steps) * StepLength                                 //Вычислить дистанцию в метрах.
-	distanceInKilometers := distanceInMeters / 1000                                 //Перевести дистанцию в километры, разделив её на 1000.
+	distanceInKilometers := distanceInMeters / mInKm                                //Перевести дистанцию в километры, разделив её на 1000.
 	calories := spentcalories.WalkingSpentCalories(steps, weight, height, duration) //Вычислить количество калорий.
 	result := fmt.Sprintf("Количество шагов: %d. \n Дистанция составила %.2f км.\n Вы сожгли %.2f ккал.", steps, distanceInKilometers, calories)
 	return result //Сформировать строку, которую будете возвращать, по примеру
